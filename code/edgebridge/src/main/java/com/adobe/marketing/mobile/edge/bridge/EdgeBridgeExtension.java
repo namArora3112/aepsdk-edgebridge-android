@@ -70,6 +70,7 @@ class EdgeBridgeExtension extends Extension {
 	 * @param event the generic track request event
 	 */
 	void handleTrackRequest(@NonNull final Event event) {
+		final String telemetryOp = com.adobe.marketing.mobile.telemetrybridge.TelemetryBridge.operationStarted("com.adobe.edgebridge", "analytics.track");
 		final Map<String, Object> eventData = event.getEventData();
 
 		if (isNullOrEmpty(eventData)) {
